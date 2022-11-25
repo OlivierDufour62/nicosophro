@@ -59,6 +59,10 @@ nav {
 }
 
 .space-mb50 {
+    margin-bottom: 50px;
+}
+
+.space-mb100 {
     margin-bottom: 100px;
 }
 
