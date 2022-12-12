@@ -13,10 +13,10 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item space-mr10">
-                                    <a class="nav-link active" aria-current="page" href="#">ACCUEIL</a>
+                                    <a class="nav-link active" aria-current="page" href="index.php">ACCUEIL</a>
                                 </li>
                                 <li class="nav-item space-mr10">
-                                    <a class="nav-link" aria-current="page" href="#">LA SOPHROLOGIE</a>
+                                    <a class="nav-link" aria-current="page" href="sophro.php">LA SOPHROLOGIE</a>
                                 </li>
                                 <li class="nav-item dropdown space-mr10">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
