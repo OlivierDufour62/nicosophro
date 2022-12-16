@@ -23,7 +23,7 @@
                                         PARTICULIERS
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Individuel</a></li>
+                                        <li><a class="dropdown-item" href="individual.php">Individuel</a></li>
                                         <li><a class="dropdown-item" href="#">Groupe</a></li>
                                         <li class="nav-item dropdown">
                                             <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Atelier</a>

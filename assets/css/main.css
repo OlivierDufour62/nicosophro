@@ -46,7 +46,7 @@ nav {
 }
 
 .space-mt50 {
-    margin-top: 50px;
+    margin-top: 50px !important;
 }
 
 .space-mt100 {
