@@ -51,7 +51,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item space-mr10">
-                                    <a class="nav-link">BLOG</a>
+                                    <a class="nav-link" href="blog.php">BLOG</a>
                                 </li>
                                 <li class="nav-item space-mr10">
                                     <a class="nav-link">MON PARCOURS</a>
