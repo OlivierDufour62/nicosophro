@@ -4,7 +4,7 @@ namespace Core;
 
 use PDO;
 
-abstract class Db 
+abstract class Db
 {
     private static $pdo;
 
@@ -18,7 +18,7 @@ abstract class Db
 
     public function getBdd()
     {
-        if(self::$pdo === null){
+        if (self::$pdo === null) {
             self::setBdd();
         }
         return self::$pdo;

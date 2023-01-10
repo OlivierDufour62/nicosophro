@@ -7,7 +7,7 @@ use Core\Db;
 
 class Admin extends Db
 {
-
+    
     public function getMessage()
     {
         $sql = "SELECT * FROM contact c WHERE c.read = false";
