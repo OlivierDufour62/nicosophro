@@ -1,0 +1,11 @@
+{
+    "name": "olivierdufour/nicosophro",
+    "description": "sophrologie",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Core\\": "core"
+        }
+    },
+    "require": {}
+}
