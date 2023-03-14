@@ -1,0 +1,146 @@
+body {
+  font-family: "Kalam", cursive;
+}
+
+.pm-0 {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+nav {
+  font-weight: bold;
+}
+
+.size {
+  font-size: 15px;
+}
+
+.bg-green {
+  background-color: #dbe1bc !important;
+}
+
+.space-mr10 {
+  margin-right: 10px !important;
+}
+
+.space-mr20 {
+  margin-right: 15px;
+}
+
+.space-mr25 {
+  margin-right: 25px;
+}
+
+.space-mr30 {
+  margin-right: 40px;
+}
+
+.space-ml2 {
+  margin-left: 2px;
+}
+
+.space-t25 {
+  margin-top: 25px;
+}
+
+.space-mt50 {
+  margin-top: 50px !important;
+}
+
+.space-mt100 {
+  margin-top: 100px;
+}
+
+.space-mb25 {
+  margin-bottom: 25px;
+}
+
+.space-mb50 {
+  margin-bottom: 50px;
+}
+
+.space-mb100 {
+  margin-bottom: 100px !important;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.background-brown {
+  background-color: #faedcd;
+}
+
+.inspace-p25 {
+  padding: 25px;
+}
+
+.b-radius-tl-mr {
+  border-radius: 25px 0 25px 0;
+}
+
+.b-radius {
+  border-radius: 20px;
+}
+
+.border {
+  border: 0.05em solid #707070 !important;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.bg-grey {
+  background-color: #f5f5f5;
+}
+
+.rotate {
+  transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -khtml-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  color: #d6ccc2;
+}
+
+.p-relative {
+  position: relative;
+  top: -19px;
+  left: 0;
+  line-height: 3em;
+}
+
+.p-relative-title {
+  position: relative;
+  top: 79px;
+}
+
+.resize {
+  resize: none;
+  border-radius: 5px 5px 5px 5px !important;
+  height: 100px;
+}
+
+/**
+La sophrologie
+**/
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/** 
+blog 
+**/
+
+.unstyle {
+  text-decoration: none !important;
+  color: black;
+}
+
+@media screen and (max-width: 1380px) {
+  .size {
+    font-size: 10px;
+  }
+}

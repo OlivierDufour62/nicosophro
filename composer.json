@@ -7,5 +7,10 @@
             "Core\\": "core"
         }
     },
-    "require": {}
+    "require": {
+        "mobiledetect/mobiledetectlib": "^3.74"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.2"
+    }
 }
