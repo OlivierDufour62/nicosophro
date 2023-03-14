@@ -72,8 +72,8 @@ class Form
 
     public function addInput(string $type, string $name, array $attributes = [], array $class = []):self
     {
-        implode(' ', $class);
-        $this->formCode .= "<input type='$type' name='$name' class='$class'";
+        $imClass = implode(' ', $class);
+        $this->formCode .= "<input type='$type' name='$name' class='$imClass'";
 
         $this->formCode .= $attributes ? $this->addAttributes($attributes).'>' : '>';
 

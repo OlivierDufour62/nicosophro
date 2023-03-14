@@ -2,27 +2,24 @@
 
 namespace App\Repository;
 
-use PDO;
-use Exception;
-use Core\Model;
 use App\Model\Contact;
+use App\Model\User;
 
-
-class ContactManager extends Contact
+class ContactManager extends User
 {
 
 
-    public function getMessage()
-    {
-        $sql = "SELECT * FROM contact c";
+    // public function getMessage()
+    // {
+    //     $sql = "SELECT * FROM users";
 
-        $stmt =  $this->getBdd()->query($sql);
+    //     $stmt =  $this->getBdd()->query($sql);
 
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        $stmt->closeCursor();
+    //     $stmt->closeCursor();
 
-        return $result;
+    //     return $result;
 
-    }
+    // }
 }

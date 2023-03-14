@@ -19,37 +19,35 @@ class PublicController extends Controller
 
     public function index()
     {
-        $testMobile= new MobileDetect;
-
+        $testMobile = new MobileDetect;
         if ($testMobile->isMobile()) {
-
-            return $this->render('accueil-mobile', ['testMobile'=>$testMobile]);
-
+            return $this->render('accueil-mobile', ['testMobile' => $testMobile]);
         } else {
-
-            return $this->render('accueil', ['testMobile'=>$testMobile]);
-
+            return $this->render('accueil', ['testMobile' => $testMobile]);
         }
     }
 
     public function contact()
     {
+        $testMobile = new MobileDetect;
+
         $form = new Form;
         $form->startForm();
         $form->addInput('text', 'test');
         $form->endForm();
 
-        return $this->render('contact', ['form' => $form->create()]);
+        return $this->render('contact', ['form' => $form->create(), 'testMobile' => $testMobile]);
     }
 
     public function sophro()
     {
-
-        return $this->render('sophro');
+        $testMobile = new MobileDetect;
+        return $this->render('sophro', ['testMobile' => $testMobile]);
     }
 
     public function individual()
     {
-        return $this->render('individual');
+        $testMobile = new MobileDetect;
+        return $this->render('individual', ['testMobile' => $testMobile]);
     }
 }

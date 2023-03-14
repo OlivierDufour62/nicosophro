@@ -2,49 +2,110 @@
 
 namespace Core;
 
-Use Core\Connect;
+use Core\Connect;
 use Core\Manager;
 use PDO;
 
-abstract class Model extends Manager
+abstract class Model extends Connect
 {
+
+    private $db;
+
     public function findAll()
     {
-        $req = $this->getBdd()->prepare("SELECT * FROM $this->table");
-        $req->execute();
-        $result = $req->fetchAll(PDO::FETCH_ASSOC);
-        $req->closeCursor();
-        return $result;
+        $query = $this->requete('SELECT * FROM ' . $this->table);
+        return $query->fetchAll();
     }
 
-    public function findById($id)
+    public function findBy(array $criteres)
     {
-        $req = $this->getBdd()->prepare("SELECT * FROM $this->table WHERE id = $id");
-        $req->execute([':id' => $id]);
-        $result = $req->fetch(PDO::FETCH_ASSOC);
-        $req->closeCursor();
-        return $result;
+        $champs = [];
+        $valeurs = [];
+
+        foreach ($criteres as $champ => $valeur) {
+            $champs[] = "$champ = ?";
+            $valeurs[] = $valeur;
+        }
+
+        $liste_champs = implode(' AND ', $champs);
+
+        return $this->requete('SELECT * FROM ' . $this->table . ' WHERE ' . $liste_champs, $valeurs)->fetchAll();
     }
 
-    public function delete($id)
+    public function find(int $id)
     {
-        $req = "DELETE FROM $this->table WHERE id = $id";
-        $stmt = $this->getBdd()->prepare($req);
-        $stmt->execute([':id' => $id]);
-        $stmt->closeCursor();
+        return $this->requete("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
     }
 
-    public function addCharacteristicBook($name)
+    public function create()
     {
-        $req = "INSERT INTO $this->table(`name`) VALUES (:name)";
-        $stmt = $this->getBdd()->prepare($req);
-        $result = $stmt->execute([':name' => $name]);
-        $stmt->closeCursor();
-        if ($result > 0) {
-            foreach ($result as $name) {
-                $this->table->setName($name);
+        $champs = [];
+        $inter = [];
+        $valeurs = [];
+
+        foreach ($this as $champ => $valeur) {
+            if ($valeur !== null && $champ != 'db' && $champ != 'table') {
+                $champs[] = $champ;
+                $inter[] = "?";
+                $valeurs[] = $valeur;
             }
         }
+
+        $liste_champs = implode(', ', $champs);
+        $liste_inter = implode(', ', $inter);
+
+        return $this->requete('INSERT INTO ' . $this->table . ' (' . $liste_champs . ')VALUES(' . $liste_inter . ')', $valeurs);
+    }
+
+    public function update()
+    {
+        $champs = [];
+        $valeurs = [];
+
+        foreach ($this as $champ => $valeur) {
+            if ($valeur !== null && $champ != 'db' && $champ != 'table') {
+                $champs[] = "$champ = ?";
+                $valeurs[] = $valeur;
+            }
+        }
+        $valeurs[] = $this->id;
+
+        $liste_champs = implode(', ', $champs);
+
+        return $this->requete('UPDATE ' . $this->table . ' SET ' . $liste_champs . ' WHERE id = ?', $valeurs);
+    }
+
+    public function delete(int $id)
+    {
+        return $this->requete("DELETE FROM {$this->table} WHERE id = ?", [$id]);
+    }
+
+
+    public function requete(string $sql, array $attributs = null)
+    {
+        $this->db = Connect::getBdd();
+
+        if ($attributs !== null) {
+            $query = $this->db->prepare($sql);
+            $query->execute($attributs);
+            return $query;
+        } else {
+            return $this->db->query($sql);
+        }
+    }
+
+
+    public function hydrate($donnees)
+    {
+        foreach ($donnees as $key => $value) {
+            
+            $setter = 'set' . ucfirst($key);
+ 
+            if (method_exists($this, $setter)) {
+
+                $this->$setter($value);
+            }
+        }
+        return $this;
     }
 }
-

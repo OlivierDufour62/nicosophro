@@ -26,8 +26,8 @@ class AdminController extends Controller
     public function displayMessage()
     {
 
-        $test = $this->getManager(ContactManager::class)->findAll();
-
+        $test = $this->manager->getManager(ContactManager::class)->findAll();
+       
         $coucou = new VarDumper;
         $coucou->dump($test);
 
