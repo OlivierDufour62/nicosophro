@@ -21,10 +21,10 @@ CREATE TABLE `contact` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
     `id` INT(10) NOT NULL AUTO_INCREMENT,
-    `lastname` VARCHAR(100) NOT NULL,
     `firstname` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
     `email` VARCHAR(100) NOT NULL UNIQUE,
-    `address` VARCHAR(255) NOT NULL UNIQUE,
+    `address` VARCHAR(255) NOT NULL,
     `zip_code` VARCHAR(50) NOT NULL,
     `city` VARCHAR(50) NOT NULL,
     `date_birthday` DATETIME NOT NULL,
@@ -32,5 +32,6 @@ CREATE TABLE `users` (
     `phone` VARCHAR(20) NOT NULL UNIQUE,
     `date_create` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `active` BOOLEAN DEFAULT TRUE,
+    `type` int,
     PRIMARY KEY (`id`)
 )ENGINE=innoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;

@@ -14,7 +14,7 @@ abstract class Model extends Connect
     public function findAll()
     {
         $query = $this->requete('SELECT * FROM ' . $this->table);
-        return $query->fetchAll();
+        return $query->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function findBy(array $criteres)

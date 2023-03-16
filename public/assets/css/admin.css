@@ -1,0 +1,19 @@
+html,body{
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+h1,header, div, table{
+    margin: 0;
+    padding: 0;
+}
+
+.menu-admin{
+    height: 100% !important;
+}
+
+/* body{
+    background-color: aqua;
+} */
+

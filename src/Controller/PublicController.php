@@ -21,7 +21,7 @@ class PublicController extends Controller
     {
         $testMobile = new MobileDetect;
         if ($testMobile->isMobile()) {
-            return $this->render('accueil-mobile', ['testMobile' => $testMobile]);
+            return $this->render('mobile/accueil-mobile', ['testMobile' => $testMobile]);
         } else {
             return $this->render('accueil', ['testMobile' => $testMobile]);
         }

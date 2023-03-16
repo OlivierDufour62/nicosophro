@@ -10,12 +10,11 @@ class Form
         return $this->formCode;
     }
 
-    public static function validate(array $form, array $champs)
+    public static function validate(array $form, array $fileds)
     {
-        foreach($champs as $champ){
+        foreach($fileds as $field){
            
-            if(!isset($form[$champ]) || empty($form[$champ])){
-               
+            if(!isset($form[$field]) || empty($form[$field])){
                 return false;
             }
         }
@@ -34,7 +33,6 @@ class Form
 
             if(in_array($attribute, $attr) && $value == true){
                 $str .= " $attribute";
-
             }else{
                 $str .= " $attribute=\"$value\"";
             }
@@ -70,10 +68,10 @@ class Form
         return $this;
     }
 
-    public function addInput(string $type, string $name, array $attributes = [], array $class = []):self
+    public function addInput(string $type, string $name, array $attributes = []):self
     {
-        $imClass = implode(' ', $class);
-        $this->formCode .= "<input type='$type' name='$name' class='$imClass'";
+       
+        $this->formCode .= "<input type='$type' name='$name'";
 
         $this->formCode .= $attributes ? $this->addAttributes($attributes).'>' : '>';
 
@@ -81,11 +79,11 @@ class Form
     }
 
 
-    public function addTextarea(string $name, string $value = '', array $attributes = [], array $class = []):self
+    public function addTextarea(string $name, string $value = '', array $attributes = []):self
     {
-        implode(' ', $class);
+        
 
-        $this->formCode .= "<textarea name='$name' class='$class'";
+        $this->formCode .= "<textarea name='$name'";
 
         $this->formCode .= $attributes ? $this->addAttributes($attributes) : '';
 

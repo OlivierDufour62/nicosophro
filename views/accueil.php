@@ -145,7 +145,7 @@ ob_start();
                 <button type="submit" class="btn bg-green shadow-sm">Envoyer</button>
             </div>
         </form>
-        <div class="col-5 space-t25 shadow-sm m-0 p-0">
+        <div class="col-6 space-t25 shadow-sm m-0 p-0">
             <img src="./public/assets/img/agenda.png" class="col-12 img-fluid " alt="Prise de rendez-vous">
         </div>
     </div>
