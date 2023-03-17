@@ -48,14 +48,30 @@ try {
                 $publicController->contact();
                 break;
             case "admin":
-                if (empty($url[1])) {
-                    $adminController->index();
-                } else if ($url[1] == 'message') {
-                    $adminController->displayMessage();
-                } else if ($url[1] == 'customer') {
-                    $adminController->customerShow();
+                if (!empty($url[1])) {
+                    if ($url[1] === 'message') {
+                        $adminController->displayMessage();
+                        break;
+                    } elseif ($url[1] === 'customer') {
+                        if (empty($url[2])) {
+                            $adminController->customers();
+                            break;
+                        } else if (!empty($url[2]) && $url[2] === 'show') {
+                            if (!empty($url[3])) {
+                                $adminController->customerShow($url[3]);
+                                break;
+                            } else {
+                                throw new Exception("La page n'existe pas");
+                            }
+                        } else {
+                            throw new Exception("La page n'existe pas");
+                        }
+                    } else {
+                        throw new Exception("La page n'existe pas");
+                    }
                 } else {
-                    throw new Exception("La page n'existe pas");
+                    $adminController->index();
+                    break;
                 }
                 break;
             default:

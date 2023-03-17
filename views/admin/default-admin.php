@@ -11,23 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/assets/css/main.css">
     <link rel="stylesheet" href="../public/assets/css/admin.css">
-    <title>Document</title>
+    <title><?= $titre ?></title>
 </head>
 
 <body style="height:100%" class="container-fluid">
     <header class="bg-green col-12 row">
-        <div class="col-6">
-            <img class="col-2" src="../public/assets/img/logo.png" alt="">
+        <div class="col-2 d-flex justify-content-center">
+            <img class="col-6" src="../public/assets/img/logo.png" alt="">
         </div>
-        <div class="col-6 h-50">
-            <h1>coucou c'est nous</h1>
+        <div class="col-8 d-flex justify-content-center">
+            <h1><?= $titre ?></h1>
         </div>
     </header>
     <div class="col-12 row menu-admin">
         <div id="menu" class="col-2 bg-green menu-admin">
             <nav class="">
                 <ul class="list-unstyled p-0 m-0 ml-5">
-                    <a class="mb-3" href="<?= URL ?>admin/customer">
+                    <a class="mb-3 link" href="<?= URL ?>admin/customer">
                         <li class="mb-3">
                             Client
                         </li>
@@ -65,8 +65,10 @@
                 </ul>
             </nav>
         </div>
-        <div class="col-6">
-            <?= $content ?>
+        <div class="col-10 d-flex justify-content-center">
+            <div class="col-12 center">
+                <?= $content ?>
+            </div>
         </div>
     </div>
 

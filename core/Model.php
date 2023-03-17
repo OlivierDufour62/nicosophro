@@ -29,12 +29,12 @@ abstract class Model extends Connect
 
         $liste_champs = implode(' AND ', $champs);
 
-        return $this->requete('SELECT * FROM ' . $this->table . ' WHERE ' . $liste_champs, $valeurs)->fetchAll();
+        return $this->requete('SELECT * FROM ' . $this->table . ' WHERE ' . $liste_champs, $valeurs)->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function find(int $id)
     {
-        return $this->requete("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
+        return $this->requete('SELECT * FROM ' . $this->table.' WHERE id = '. $id)->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function create()
@@ -84,7 +84,7 @@ abstract class Model extends Connect
     public function requete(string $sql, array $attributs = null)
     {
         $this->db = Connect::getBdd();
-
+        
         if ($attributs !== null) {
             $query = $this->db->prepare($sql);
             $query->execute($attributs);

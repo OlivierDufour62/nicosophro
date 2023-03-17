@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use PDO;
-use Core\Db;
+
 use Core\Manager;
 use Core\Controller;
 use App\Repository\UserManager;
@@ -24,7 +23,7 @@ class AdminController extends Controller
         return $this->render('admin/accueil');
     }
 
-    public function customerShow()
+    public function customers()
     {
         $users = $this->manager->getManager(UserManager::class)->findAll();
 
@@ -40,5 +39,14 @@ class AdminController extends Controller
         $coucou->dump($test);
 
         return $this->render('admin/message', ['test' => $test]);
+    }
+
+    public function customerShow(int $id)
+    {
+        
+        $user = $this->manager->getManager(UserManager::class)->find($id);
+        $coucou = new VarDumper;
+        $coucou->dump($user);
+        return $this->render('admin/customerShow', ['user' => $user]);
     }
 }

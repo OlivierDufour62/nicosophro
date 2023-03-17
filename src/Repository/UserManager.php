@@ -2,9 +2,9 @@
 
 namespace App\Repository;
 
-use App\Model\User;
+use App\Model\Users;
 
-class UserManager extends User
+class UserManager extends Users
 {
 
 }

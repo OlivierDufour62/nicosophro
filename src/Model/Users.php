@@ -5,7 +5,7 @@ namespace App\Model;
 use Core\Model;
 use DateTimeImmutable;
 
-class User extends Model
+class Users extends Model
 {
     
     private int $id;
