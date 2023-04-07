@@ -1,5 +1,6 @@
 <?php
 ob_start();
+
 ?>
 <div id="part1">
     <div class="row space-mt100 space-mb100">
@@ -7,12 +8,10 @@ ob_start();
             <h1>Bienvenue</h1>
         </div>
         <div class="d-flex justify-content-center space-t25">
-            <div class="size col-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nulla praesentium maiores nemo
-                    dolorum commodi consequuntur laborum. Ipsa, suscipit magnam ex dolorum, sunt commodi, voluptatem
-                    quibusdam at velit dolorem repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aperiam natus facere sit veniam repudiandae, numquam tempora et nihil quos officiis excepturi
-                    molestiae eius obcaecati laboriosam ducimus sapiente? Dolor, est asperiores.</p>
+            <div class="size text-center col-6">
+                <p>Je suis un sophrologue formé par la plus grande école de France et je vous accompagne dans votre quête de bien-être grâce à des séances de sophrologie personnalisées. Mon approche vise à réduire le stress, les angoisses et les tensions du quotidien en utilisant des exercices de respiration, de relaxation musculaire et de visualisation positive.<br>
+
+                    Vous apprendrez ainsi à mieux gérer vos émotions et à vous recentrer sur vous-même. N'hésitez pas à me contacter pour toute question ou pour prendre rendez-vous. Je suis là pour vous aider à retrouver la sérénité et l'harmonie intérieure.</p>
             </div>
         </div>
     </div>

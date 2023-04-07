@@ -1,12 +1,8 @@
-var partOne = document.getElementById("part1");
-var div = document.createElement("div");
-function welcome() {
-    div.setAttribute("class", "row");
-    div.classList.add("space-t50");
-    partOne.appendChild(div);
-    div.appendChild(div);
-    div.setAttribute("class", "col-12");
-    div.classList.add("space-t50");
-    partOne.appendChild(div);
-}
-welcome();
+$(document).ready(function(){
+    $('#name').appendTo($('.name'));
+    $('#firstname').appendTo($('.firstname'));
+    $('#phone').appendTo($('.phone'));
+    $('#email').appendTo($('.email'));
+    $('#content').appendTo($('.content'));
+    // console.log($('#name'))
+})

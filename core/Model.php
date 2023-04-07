@@ -45,12 +45,14 @@ abstract class Model extends Connect
 
         foreach ($this as $champ => $valeur) {
             if ($valeur !== null && $champ != 'db' && $champ != 'table') {
+
                 $champs[] = $champ;
                 $inter[] = "?";
                 $valeurs[] = $valeur;
+
+
             }
         }
-
         $liste_champs = implode(', ', $champs);
         $liste_inter = implode(', ', $inter);
 
@@ -88,6 +90,7 @@ abstract class Model extends Connect
         if ($attributs !== null) {
             $query = $this->db->prepare($sql);
             $query->execute($attributs);
+    //    var_dump($attributs);
             return $query;
         } else {
             return $this->db->query($sql);

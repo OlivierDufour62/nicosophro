@@ -8,30 +8,29 @@ use DateTimeImmutable;
 class Contact extends Model
 {
     
-    private int $id;
+    protected int $id;
 
-    private string $lastname;
+    protected string $lastname;
 
-    private string $firstname;
+    protected string $firstname;
 
-    private string $email;
+    protected string $email;
 
-    private string $content;
+    protected string $content;
 
-    private string $phone;
+    protected string $phone;
 
-    private DateTimeImmutable $date_create;
+    protected string $date_create;
 
-    private DateTimeImmutable $date_read;
+    protected string $date_read;
 
-    private bool $read;
+    protected bool $read;
 
     protected $table = 'contact';
 
     public function __construct()
     {   
-        $this->setDate_create(new DateTimeImmutable());
-        $this->setDate_read(new DateTimeImmutable());
+        
     }
     
     /**
@@ -157,7 +156,7 @@ class Contact extends Model
     /**
      * Get the value of date_create
      */ 
-    public function getDate_create(): ?DateTimeImmutable
+    public function getDate_create()
     {
         return $this->date_create;
     }
@@ -167,7 +166,7 @@ class Contact extends Model
      *
      * @return  self
      */ 
-    public function setDate_create(DateTimeImmutable $date_create)
+    public function setDate_create($date_create)
     {
         $this->date_create = $date_create;
 
@@ -177,7 +176,7 @@ class Contact extends Model
     /**
      * Get the value of date_read
      */ 
-    public function getDate_read(): ?DateTimeImmutable
+    public function getDate_read()
     {
         return $this->date_read;
     }
@@ -187,7 +186,7 @@ class Contact extends Model
      *
      * @return  self
      */ 
-    public function setDate_read(DateTimeImmutable $date_read)
+    public function setDate_read($date_read)
     {
         $this->date_read = $date_read;
 
