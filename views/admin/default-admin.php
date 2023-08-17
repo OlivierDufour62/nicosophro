@@ -28,28 +28,28 @@
             <nav class="">
                 <ul class="list-unstyled p-0 m-0 ml-5">
                     <a class="mb-3 link" href="<?= URL ?>admin/customer">
-                        <li class="mb-3">
+                    <li class="mb-3">
                             Client
                         </li>
                     </a>
                     <a href="">
                         <li class="mb-3">
-                            A voir
+                            Étape
                         </li>
                     </a>
                     <a href="">
                         <li class="mb-3">
-                            A voir
+                            Mes protocoles
                         </li>
                     </a>
                     <a href="">
                         <li class="mb-3">
-                            A voir
+                            Mes exercices
                         </li>
                     </a>
                     <a href="">
                         <li class="mb-3">
-                            A voir
+                            Mes outils
                         </li>
                     </a>
                     <a href="<?= URL ?>admin/message">
